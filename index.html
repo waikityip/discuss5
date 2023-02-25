@@ -1,0 +1,208 @@
+<!doctype html>
+<title>Example</title>
+<style>
+body {
+	background-color: rgb(247, 242, 242);
+	overflow: hidden; /* Hide scrollbars */
+}
+.grid {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 0px;  
+}
+.header,.pic,.cont,.left {
+  color: rgb(0, 0, 0);
+  font-size: 4vw;
+  padding: 0px;
+  background: rgb(247, 242, 242);
+  text-align: center;
+}
+.left {
+  grid-column: span 6;
+  height: 100vh;
+  }
+.header {
+  grid-column: span 12;
+  height: 20vh;
+  
+  }
+.cont {
+  grid-column: span 12;
+  max-height: 100%;
+  }
+.pic {
+  grid-column: span 6;
+  height: 100vh;
+  
+  }
+.responsive {
+  width: auto;
+  max-height: 100%;
+ 
+}
+
+.weare {
+  color: rgb(255, 156, 138);
+  font-size: 2em;
+  margin: 0 0 0 5vw;
+  text-align: left;
+}
+.coming {
+  color: rgb(0, 0, 0);
+  font-size: 2em;
+  margin: 0 0 0 5vw;
+  text-align: left;
+}
+
+.text {
+  color: rgba(239, 135, 135, 0.722);
+  font-size: 0.5em;
+  margin: 0 0 0 5vw;
+  text-align: left;
+}
+
+
+img {
+	margin: 0 0 0 5vw;
+}
+
+form {
+	position: relative;
+	width: 80%;
+	margin: 2rem auto;
+}
+
+input[type="text"] {
+	width: 100%;
+	background: transparent;
+	border-radius: 10000px;
+	height: 3rem;
+	padding-left: 1.5rem;
+	font-size: 1rem;
+	outline: none;
+	border: 0.09rem solid var(--Desaturated-Red);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.1s ease;
+}
+
+input[type="text"].error {
+	border: 0.11rem solid var(--Soft-Red);
+}
+
+::placeholder {
+	color: var(--Desaturated-Red);
+}
+
+form div {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+form div #error-icon {
+	width: 1.2rem;
+	margin-right: 0.5rem;
+	margin: auto 0.5rem auto 0;
+	user-select: none;
+	opacity: 0;
+	transition: all 0.1s ease;
+}
+
+form div #error-icon.error {
+	opacity: 1;
+}
+
+form div button {
+	display: inline-block;
+	border-radius: 10000px;
+	height: 3rem;
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	padding: 0 2rem;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.1s ease;
+}
+
+form div button:hover {
+	box-shadow: 0 15px 20px -3px var(--Desaturated-Red);
+}
+
+#error {
+	position: absolute;
+	left: 1.6rem;
+	top: 3.4rem;
+	color: var(--Soft-Red);
+	opacity: 0;
+	transition: all 0.1s linear;
+}
+
+#error.error {
+	user-select: none;
+	opacity: 1;
+}
+
+
+@media screen and (max-width: 575px) {
+    .grid {
+      display: block;
+      }
+    .box {
+      margin: 0px 0;
+    }
+  }
+</style>
+
+
+
+<main class="grid">
+<div class="left">
+	<div class="header"><img src="./images/logo.svg"></div>
+	<div class="cont">
+		<div class="weare">
+			WE'RE
+		</div>
+		<div class="coming">
+			COMING <br> SOON
+		</div>
+		<div class="text">
+			Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our lanuch deals.
+		</div>
+
+		<form action="" method="get" accept-charset="utf-8">
+			<input
+				type="text"
+				name="email"
+				id="email"
+				value=""
+				placeholder="Email Address"
+			/>
+			<div>
+				<img
+					id="error-icon"
+					src="./images/icon-error.svg"
+					alt="error-icon"
+				/>
+				<button class="btn" type="submit">
+					<img src="./images/icon-arrow.svg" alt="submit-arrow" />
+				</button>
+			</div>
+			<p id="error">Please provide a valid email</p>
+		</form>
+
+
+	</div>
+</div>  
+
+
+  <div class="pic"><img src="./images/hero-desktop.jpg" alt="Nature" class="responsive"></div>
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+
+</main>
